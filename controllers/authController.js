@@ -1,9 +1,9 @@
 import * as authService from "../services/authService.js";
 
-// @desc Register user
+// @desc Register contributor
 // @route POST /api/auth
 // @access Public
-const registerUser = async (req, res) => {
+const registerContributor = async (req, res) => {
   let { firstName, middleName, lastName, email, username, password } = req.body;
 
   // Validate that required fields are not empty
@@ -14,15 +14,15 @@ const registerUser = async (req, res) => {
     res.status(400).json({ errMsg: "Please add all fieds" });
   }
 
-  // Validate that user does not already exist
-  const userExists = await authService.findUser(email);
+  // Validate that contributor does not already exist
+  const contributorExists = await authService.findContributor(email);
 
-  if (userExists) {
+  if (contributorExists) {
     res.status(400).json({ errMsg: "User already exists" });
   }
 
   try {
-    const newUser = await authService.registerUser({
+    const newContributor = await authService.registerContributor({
       firstName,
       middleName,
       lastName,
@@ -31,13 +31,11 @@ const registerUser = async (req, res) => {
       password,
     });
 
-    res.status(201).json(newUser);
+    res.status(201).json(newContributor);
   } catch (error) {
     console.log(err);
     res.status(500).json({ errMsg: "Unable to create user" });
   }
 };
 
-
-
-export { registerUser };
+export { registerContributor };

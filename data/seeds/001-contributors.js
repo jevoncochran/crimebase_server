@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
  * @returns { Promise<void> }
  */
 export function seed(knex) {
-  return knex("users").insert([
+  return knex("contributors").insert([
     {
       firstName: "Jevon",
       lastName: "Cochran",

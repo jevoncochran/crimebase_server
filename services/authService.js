@@ -1,16 +1,16 @@
 import bcrypt from "bcryptjs";
-import Users from "../models/userModel.js";
+import Contributors from "../models/contributorModel.js";
 
-const registerUser = async (user) => {
-  let { password } = user;
+const registerContributor = async (contributor) => {
+  let { password } = contributor;
   const hash = bcrypt.hashSync(password, 8);
   password = hash;
 
-  return Users.createUser({ ...user, password });
+  return Contributors.createContributor({ ...contributor, password });
 };
 
-const findUser = async (email) => {
-  return Users.findUserBy({ email });
+const findContributor = async (email) => {
+  return Contributors.findContributorBy({ email });
 };
 
-export { registerUser, findUser };
+export { registerContributor, findContributor };
