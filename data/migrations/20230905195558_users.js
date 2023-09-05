@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function (knex) {
+export function up(knex) {
   return knex.schema.createTable("users", (tbl) => {
     tbl.increments();
 
@@ -20,12 +20,12 @@ exports.up = function (knex) {
 
     tbl.boolean("restricted");
   });
-};
+}
 
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function (knex) {
+export function down(knex) {
   return knex.schema.dropTableIfExists("users");
-};
+}

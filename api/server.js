@@ -1,7 +1,7 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
-const authRouter = require("../routers/authRouter");
+import authRouter from "../routers/authRouter.js";
 
 const server = express();
 
@@ -14,4 +14,4 @@ server.get("/", (req, res) => {
 
 server.use("/api/auth", authRouter);
 
-module.exports = server;
+export default server;

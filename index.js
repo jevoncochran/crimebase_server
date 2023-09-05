@@ -1,5 +1,5 @@
-const app = require("./api/server");
+import app from "./api/server.js";
 
-const { port } = require("./config");
+import { port } from "./config/config.js";
 
 app.listen(port, () => console.log(`*** Server listening on port ${port} ***`));

@@ -1,10 +1,10 @@
-const bcrypt = require("bcryptjs");
+import bcrypt from "bcryptjs";
 
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.seed = async function (knex) {
+export function seed(knex) {
   return knex("users").insert([
     {
       firstName: "Jevon",
@@ -28,4 +28,4 @@ exports.seed = async function (knex) {
       password: bcrypt.hashSync("gatlin", 8),
     },
   ]);
-};
+}
