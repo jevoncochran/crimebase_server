@@ -9,7 +9,9 @@ export function up(knex) {
       .createTable("suspects", (tbl) => {
         tbl.increments();
 
-        tbl.string("name");
+        tbl.string("name").notNullable();
+
+        tbl.string("mainImageUrl");
 
         tbl.enum("status", ["dead", "incarcerated", "wanted"]);
       })
