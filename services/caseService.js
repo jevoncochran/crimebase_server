@@ -49,4 +49,22 @@ const getBuzzingCases = async () => {
   return cases;
 };
 
-export { getCaseById, getBuzzingCases };
+const getLocalCases = async () => {
+  const cases = await Cases.getCasesBy({ location: "Oakland, CA, U.S." });
+
+  // Iterate over each case and retrieve
+  // victims, suspects, caseTypes
+  for (const [idx, value] of cases.entries()) {
+    const victims = await getVictimsByCase(value.id);
+    const suspects = await getSuspectsByCase(value.id);
+    const caseTypes = await getCaseTypes(value.id);
+    const simpliedCaseTypes = [];
+    caseTypes.forEach((ct) => simpliedCaseTypes.push(ct.type));
+
+    cases[idx] = { ...value, victims, suspects, caseTypes: simpliedCaseTypes };
+  }
+
+  return cases;
+};
+
+export { getCaseById, getBuzzingCases, getLocalCases };
