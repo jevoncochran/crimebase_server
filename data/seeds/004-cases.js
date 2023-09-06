@@ -48,5 +48,27 @@ export function seed(knex) {
       status: "solved",
       buzzing: false,
     },
+    {
+      threadId: 5,
+      title: "The Killing of Jasper Wu",
+      summary:
+        "Jasper Wu, a 23-month-old boy, was shot and killed on an Oakland freeway in November 2021 amid alleged gang activities. In December 2022, three suspects—Johnny Jackson, Trevor Green and Ivory Bivins—were arrested in connection with Wu’s death.",
+      location: "Oakland, CA, U.S.",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694034919/jasper-wu-2000-b4978518d5684604be67973633f251c1_zl5l3r.jpg",
+      status: "solved",
+      buzzing: false,
+    },
+    {
+      threadId: 6,
+      title: "The Murder of Sophia Mason",
+      summary:
+        "Sophia, who was last seen by extended family in December, was found dead March 11. A missing persons report filed by the girl’s aunt and grandmother a month earlier eventually led police to the Merced home her mother shared with her boyfriend. While searching the house, officers kicked open a locked bathroom door. Inside, an exhaust fan whirred and dead flies littered the floor. Sticks of incense could not mask the smell of the child’s decomposing body.",
+      location: "Oakland, CA, U.S.",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035515/EBT-L-EDIT-SOPHIA-0703-1_lgixhm.webp",
+      status: "solved",
+      buzzing: false,
+    },
   ]);
 }

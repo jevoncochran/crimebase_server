@@ -60,5 +60,19 @@ export function seed(knex) {
       fate: "murdered",
       caseId: 4,
     },
+    {
+      name: "Jasper Wu",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035033/211111-jasper-wu-jm-1507-2b0541_xvvmui.webp",
+      fate: "murdered",
+      caseId: 5,
+    },
+    {
+      name: "Sophia Mason",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035762/sophia-mason-0912_r06if8.webp",
+      fate: "murdered",
+      caseId: 6,
+    },
   ]);
 }

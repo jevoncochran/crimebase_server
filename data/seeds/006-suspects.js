@@ -28,5 +28,29 @@ export function seed(knex) {
         "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694033738/FumfQJOaEAAOSi9_opjtzk.jpg",
       status: "incarcerated",
     },
+    {
+      name: "Ivory Bivens",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035151/FuhHvBzaIAIWrSZ_hvz4yl.jpg",
+      status: "incarcerated",
+    },
+    {
+      name: "Trevor Green",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035206/FyCEINUaYAE0myc_nkfkk1.jpg",
+      status: "incarcerated",
+    },
+    {
+      name: "Samantha Johson",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035860/samantha-MUG2_koy0av.webp",
+      status: "incarcerated",
+    },
+    {
+      name: "Dhante Jackson",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035957/california-8-yo-killer-arrested-005_a2o1km.webp",
+      status: "incarcerated",
+    },
   ]);
 }

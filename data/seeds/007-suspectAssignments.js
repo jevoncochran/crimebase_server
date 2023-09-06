@@ -8,5 +8,9 @@ export function seed(knex) {
     { caseId: 2, suspectId: 2, status: "confirmedAsPerp" },
     { caseId: 3, suspectId: 3, status: "confirmedAsPerp" },
     { caseId: 4, suspectId: 4, status: "confirmedAsPerp" },
+    { caseId: 5, suspectId: 5, status: "confirmedAsPerp" },
+    { caseId: 5, suspectId: 6, status: "confirmedAsPerp" },
+    { caseId: 6, suspectId: 7, status: "confirmedAsPerp" },
+    { caseId: 6, suspectId: 8, status: "confirmedAsPerp" },
   ]);
 }

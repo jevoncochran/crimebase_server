@@ -8,5 +8,7 @@ export function seed(knex) {
     { typeId: 1, caseId: 2 },
     { typeId: 1, caseId: 3 },
     { typeId: 1, caseId: 4 },
+    { typeId: 1, caseId: 5 },
+    { typeId: 1, caseId: 6 },
   ]);
 }
