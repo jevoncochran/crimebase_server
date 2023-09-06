@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import authRouter from "../routers/authRouter.js";
+import caseRouter from "../routers/caseRouter.js";
 
 const server = express();
 
@@ -13,5 +14,6 @@ server.get("/", (req, res) => {
 });
 
 server.use("/api/auth", authRouter);
+server.use("/api/cases", caseRouter);
 
 export default server;
