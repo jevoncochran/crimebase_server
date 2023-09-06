@@ -32,5 +32,33 @@ export function seed(knex) {
       fate: "murdered",
       caseId: 1,
     },
+    {
+      name: "Liberty German",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694031938/nintchdbpict0003399926851_gcrdrx.webp",
+      fate: "murdered",
+      caseId: 3,
+    },
+    {
+      name: "Abigail Williams",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694031974/LJC032000-1_20170216_q7qs4h.jpg",
+      fate: "murdered",
+      caseId: 3,
+    },
+    {
+      name: "Rebecca Jenkins",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694033911/408284_kjlonv.jpg",
+      fate: "murdered",
+      caseId: 4,
+    },
+    {
+      name: "Desiree Jenkins",
+      mainImageUrl:
+        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694034072/408140_rjkblm.jpg",
+      fate: "murdered",
+      caseId: 4,
+    },
   ]);
 }
