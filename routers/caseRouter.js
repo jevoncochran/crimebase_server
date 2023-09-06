@@ -2,10 +2,13 @@ import express from "express";
 const router = express.Router();
 
 import {
+  getAllCases,
   getBuzzingCases,
   getLocalCases,
   getCaseById,
 } from "../controllers/caseController.js";
+
+router.get("/", getAllCases);
 
 // This has to be placed above getCaseById
 // If not, the "inthenews" part gets read as the caseId params smh

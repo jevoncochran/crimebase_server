@@ -1,5 +1,19 @@
 import * as caseService from "../services/caseService.js";
 
+// @desc Get all cases
+// @route GET /api/cases
+// @access Public
+const getAllCases = async (req, res) => {
+  try {
+    const cases = await caseService.getAllCases();
+
+    res.status(200).json(cases);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ errMsg: "Unable to retrieve cases" });
+  }
+};
+
 // @desc Get case by ID
 // @route GET /api/cases/:caseId
 // @access Public
@@ -44,4 +58,4 @@ const getLocalCases = async (req, res) => {
   }
 };
 
-export { getCaseById, getBuzzingCases, getLocalCases };
+export { getAllCases, getCaseById, getBuzzingCases, getLocalCases };

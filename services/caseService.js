@@ -1,5 +1,23 @@
 import Cases from "../models/caseModel.js";
 
+const getAllCases = async () => {
+  const cases = await Cases.getAllCases();
+
+  // Iterate over each case and retrieve
+  // victims, suspects, caseTypes
+  for (const [idx, value] of cases.entries()) {
+    const victims = await getVictimsByCase(value.id);
+    const suspects = await getSuspectsByCase(value.id);
+    const caseTypes = await getCaseTypes(value.id);
+    const simpliedCaseTypes = [];
+    caseTypes.forEach((ct) => simpliedCaseTypes.push(ct.type));
+
+    cases[idx] = { ...value, victims, suspects, caseTypes: simpliedCaseTypes };
+  }
+
+  return cases;
+};
+
 const getCaseById = async (id) => {
   // Retrive the case by the ID
   // Unfortunately, 'case' is a reserved keyword
@@ -67,4 +85,4 @@ const getLocalCases = async () => {
   return cases;
 };
 
-export { getCaseById, getBuzzingCases, getLocalCases };
+export { getAllCases, getCaseById, getBuzzingCases, getLocalCases };

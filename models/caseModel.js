@@ -1,5 +1,9 @@
 import db from "../data/dbConfig.js";
 
+const getAllCases = () => {
+  return db("cases").select("*");
+};
+
 const getCasesBy = (filter) => {
   return db("cases").select("*").where(filter);
 };
@@ -29,6 +33,7 @@ const getCaseTypes = (caseId) => {
 };
 
 export default {
+  getAllCases,
   getCasesBy,
   findCaseBy,
   findVictimsByCase,
