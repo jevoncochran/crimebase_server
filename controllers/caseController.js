@@ -58,4 +58,26 @@ const getLocalCases = async (req, res) => {
   }
 };
 
-export { getAllCases, getCaseById, getBuzzingCases, getLocalCases };
+// @desc Get cases by all filter
+// @route GET /api/cases/search
+// @access Public
+const getCasesByAllFilter = async (req, res) => {
+  const { searchQuery } = req.body;
+
+  try {
+    const cases = await caseService.getCasesByAllFilter(searchQuery);
+
+    res.status(200).json(cases);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ errMsg: "Unable to retrieve cases" });
+  }
+};
+
+export {
+  getAllCases,
+  getCaseById,
+  getBuzzingCases,
+  getLocalCases,
+  getCasesByAllFilter,
+};

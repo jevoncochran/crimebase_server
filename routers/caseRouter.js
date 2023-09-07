@@ -6,6 +6,7 @@ import {
   getBuzzingCases,
   getLocalCases,
   getCaseById,
+  getCasesByAllFilter,
 } from "../controllers/caseController.js";
 
 router.get("/", getAllCases);
@@ -14,6 +15,7 @@ router.get("/", getAllCases);
 // If not, the "inthenews" part gets read as the caseId params smh
 router.get("/inthenews", getBuzzingCases);
 router.get("/local", getLocalCases);
+router.get("/search", getCasesByAllFilter);
 
 router.get("/:caseId", getCaseById);
 

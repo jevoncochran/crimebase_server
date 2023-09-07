@@ -10,5 +10,6 @@ export function seed(knex) {
     { typeId: 1, caseId: 4 },
     { typeId: 1, caseId: 5 },
     { typeId: 1, caseId: 6 },
+    { typeId: 1, caseId: 7 },
   ]);
 }
