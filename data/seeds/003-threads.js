@@ -10,6 +10,5 @@ export function seed(knex) {
     { id: 4 },
     { id: 5 },
     { id: 6 },
-    { id: 7 },
   ]);
 }

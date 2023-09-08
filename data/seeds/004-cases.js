@@ -70,16 +70,5 @@ export function seed(knex) {
       status: "solved",
       buzzing: false,
     },
-    {
-      threadId: 7,
-      title: "The Williams Test Case",
-      summary:
-        "Sophia, who was last seen by extended family in December, was found dead March 11. A missing persons report filed by the girl’s aunt and grandmother a month earlier eventually led police to the Merced home her mother shared with her boyfriend. While searching the house, officers kicked open a locked bathroom door. Inside, an exhaust fan whirred and dead flies littered the floor. Sticks of incense could not mask the smell of the child’s decomposing body.",
-      location: "Oakland, CA, U.S.",
-      mainImageUrl:
-        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1693275072/cld-sample.jpg",
-      status: "solved",
-      buzzing: false,
-    },
   ]);
 }

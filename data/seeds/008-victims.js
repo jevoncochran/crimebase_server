@@ -74,12 +74,5 @@ export function seed(knex) {
       fate: "murdered",
       caseId: 6,
     },
-    {
-      name: "Test Jackson",
-      mainImageUrl:
-        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035762/sophia-mason-0912_r06if8.webp",
-      fate: "murdered",
-      caseId: 7,
-    },
   ]);
 }

@@ -12,6 +12,5 @@ export function seed(knex) {
     { caseId: 5, suspectId: 6, status: "confirmedAsPerp" },
     { caseId: 6, suspectId: 7, status: "confirmedAsPerp" },
     { caseId: 6, suspectId: 8, status: "confirmedAsPerp" },
-    { caseId: 7, suspectId: 9, status: "confirmedAsPerp" },
   ]);
 }

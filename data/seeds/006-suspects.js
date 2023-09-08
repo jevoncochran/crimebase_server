@@ -52,11 +52,5 @@ export function seed(knex) {
         "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035957/california-8-yo-killer-arrested-005_a2o1km.webp",
       status: "incarcerated",
     },
-    {
-      name: "Test Suspect",
-      mainImageUrl:
-        "https://res.cloudinary.com/dqhfx5f07/image/upload/v1694035957/california-8-yo-killer-arrested-005_a2o1km.webp",
-      status: "incarcerated",
-    },
   ]);
 }
