@@ -1,5 +1,19 @@
 import * as caseService from "../services/caseService.js";
 
+// @desc Get all cases
+// @route GET /api/cases
+// @access Public
+const getAllCases = async (req, res) => {
+  try {
+    const cases = await caseService.getAllCases();
+
+    res.status(200).json(cases);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ errMsg: "Unable to retrieve cases" });
+  }
+};
+
 // @desc Get case by ID
 // @route GET /api/cases/:caseId
 // @access Public
@@ -44,4 +58,35 @@ const getLocalCases = async (req, res) => {
   }
 };
 
-export { getCaseById, getBuzzingCases, getLocalCases };
+// @desc Get cases by all filter
+// @route GET /api/cases/search
+// @access Public
+const getCasesBySearchFilter = async (req, res) => {
+  const { filter } = req.query;
+  const { query } = req.query;
+
+  try {
+    let cases;
+
+    if (filter === "all") {
+      cases = await caseService.getCasesByAllFilter(query);
+    }
+
+    if (filter === "location") {
+      cases = await caseService.getCasesByLocationFilter(query);
+    }
+
+    res.status(200).json(cases);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ errMsg: "Unable to retrieve cases" });
+  }
+};
+
+export {
+  getAllCases,
+  getCaseById,
+  getBuzzingCases,
+  getLocalCases,
+  getCasesBySearchFilter,
+};
