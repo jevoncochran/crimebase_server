@@ -61,11 +61,20 @@ const getLocalCases = async (req, res) => {
 // @desc Get cases by all filter
 // @route GET /api/cases/search
 // @access Public
-const getCasesByAllFilter = async (req, res) => {
-  const { searchQuery } = req.body;
+const getCasesBySearchFilter = async (req, res) => {
+  const { filter } = req.query;
+  const { query } = req.query;
 
   try {
-    const cases = await caseService.getCasesByAllFilter(searchQuery);
+    let cases;
+
+    if (filter === "all") {
+      cases = await caseService.getCasesByAllFilter(query);
+    }
+
+    if (filter === "location") {
+      cases = await caseService.getCasesByLocationFilter(query);
+    }
 
     res.status(200).json(cases);
   } catch (error) {
@@ -79,5 +88,5 @@ export {
   getCaseById,
   getBuzzingCases,
   getLocalCases,
-  getCasesByAllFilter,
+  getCasesBySearchFilter,
 };

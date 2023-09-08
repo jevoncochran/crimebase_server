@@ -149,8 +149,8 @@ const getCasesByAllFilter = async (searchQuery) => {
         const caseTypes = await getCaseTypes(value.id);
         const simpliedCaseTypes = [];
         caseTypes.forEach((ct) => simpliedCaseTypes.push(ct.type));
-        
-      // Add victims, suspects, caseTypes to case object
+
+        // Add victims, suspects, caseTypes to case object
         cases.push({
           ...value,
           victims,
@@ -165,10 +165,33 @@ const getCasesByAllFilter = async (searchQuery) => {
   return cases;
 };
 
+const getCasesByLocationFilter = async (searchQuery) => {
+  const cases = await Cases.getCasesByLocationFilter(searchQuery);
+
+  for (const [idx, value] of cases.entries()) {
+    const victims = await getVictimsByCase(value.id);
+    const suspects = await getSuspectsByCase(value.id);
+    const caseTypes = await getCaseTypes(value.id);
+    const simpliedCaseTypes = [];
+    caseTypes.forEach((ct) => simpliedCaseTypes.push(ct.type));
+
+    // Add victims, suspects, caseTypes to case object
+    cases[idx] = {
+      ...value,
+      victims,
+      suspects,
+      caseTypes: simpliedCaseTypes,
+    };
+  }
+
+  return cases;
+};
+
 export {
   getAllCases,
   getCaseById,
   getBuzzingCases,
   getLocalCases,
   getCasesByAllFilter,
+  getCasesByLocationFilter,
 };

@@ -51,6 +51,10 @@ const getCasesByAllFilter = (searchQuery) => {
     .orWhere("location", "like", `%${searchQuery}%`);
 };
 
+const getCasesByLocationFilter = (searchQuery) => {
+  return db("cases").select("*").where("location", "like", `%${searchQuery}%`);
+};
+
 const getCasesBySuspect = (suspectId) => {
   return db("cases as c")
     .join("suspectAssignments as sa", "sa.caseId", "c.id")
@@ -77,5 +81,6 @@ export default {
   findSuspectsByName,
   getCaseTypes,
   getCasesByAllFilter,
+  getCasesByLocationFilter,
   getCasesBySuspect,
 };
